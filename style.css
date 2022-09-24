@@ -1,0 +1,125 @@
+*{
+
+  margin: 0;
+  padding: 0%;  
+ 
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color:chocolate;
+    
+}
+
+
+label{
+    
+    text-decoration: underline;
+}
+button{
+    margin-top: 1%;
+    height: 10vh;
+    font-size:large;
+    box-shadow: -2px 3px black, -2px 3px black;
+    
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.boton, #btn_pausar  {
+    width: 70vh;
+}
+
+
+
+.pausar{
+    float: right;
+    font-size: 35px;
+    width: max-content;
+    height: max-content;
+}
+.conjunto {
+    
+    border: darkblue;
+    border-style:groove;
+    width: max-content;
+    text-align: center;
+    color:rgb(0, 0, 0);
+    background-color: beige;
+
+}
+.notas{
+    background-color: antiquewhite;
+    color: black;
+    text-decoration: underline;
+}
+.repro{
+    text-align: center;
+    margin-left: 100px;
+    height: 50px;
+    width: 50px;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+}
+
+.borrar{
+  
+    height: 40px;
+}
+#notas {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: transparent;
+    
+}
+.normal{
+    
+    width: 50px;
+    height: 120px;
+    background-color: aliceblue;
+    border: 4px solid black;
+    border-radius: 0 0 6px 6px;
+    outline: none;
+    
+}
+
+.sostenido{
+    
+    width: max-content;
+    height: 80px;
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 0 0 2px 2px;
+    outline: none;
+    color: aliceblue;
+
+}
+
+.microtono{
+    background-color: gray;
+    color: aliceblue;
+    width: 55px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 0 0 2px 2px;
+    outline: none;
+}
+
+#cuarto{
+    display: none;
+}
+
+@media (max-width: 950px){
+    #notas, #permiso{
+        display: none;
+    }
+}

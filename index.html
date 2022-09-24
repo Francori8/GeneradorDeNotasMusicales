@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generador de notas</title>
+    <link rel="icon" type = "image/x-icon"href="img/musica2.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" charset="utf-8"></script>
+  </head>
+  <body >
+    <header>
+      
+      <div id="notas">  <!--teclado superior-->
+        <button onclick="Sonido(0)" class="normal">DO </button>
+        <button onclick="Sonido(12)" class="microtono doM">DO° </button>
+        <button onclick="Sonido(1)" class="sostenido doS">DO# </button>
+        <button onclick="Sonido(13)" class="microtono doSM">DO#° </button>
+        <button onclick="Sonido(2)" class="normal">RE</button>
+        <button onclick="Sonido(14)" class="microtono reM">RE° </button>
+        <button onclick="Sonido(3)" class="sostenido reS">RE#</button>
+        <button onclick="Sonido(15)" class="microtono reSM">RE#°</button>
+        <button onclick="Sonido(4)"class="normal">MI</button>
+        <button onclick="Sonido(16)"class="microtono miM">MI° </button>
+        <button onclick="Sonido(5)" class="normal">FA</button>
+        <button onclick="Sonido(17)" class="microtono faM">FA° </button>
+        <button onclick="Sonido(6)" class="sostenido faS">FA#</button>
+        <button onclick="Sonido(18)" class="microtono faSM">FA#° </button>
+        <button onclick="Sonido(7)" class="normal">SOL</button>
+        <button onclick="Sonido(19)" class="microtono solM" >SOL° </button>
+        <button onclick="Sonido(8)" class="sostenido solS">SOL#</button>
+        <button onclick="Sonido(20)" class="microtono solSM">SOL#° </button>
+        <button onclick="Sonido(9)" class="normal">LA</button>
+        <button onclick="Sonido(21)" class="microtono laM">LA° </button>
+        <button onclick="Sonido(10)" class="sostenido laS">LA#</button>
+        <button onclick="Sonido(22)" class="microtono laSM">LA#° </button>
+        <button onclick="Sonido(11)" class="normal">SI</button>
+        <button onclick="Sonido(23)" class="microtono siM">SI° </button>
+        
+      </div>
+      <br>
+      <button id="permiso" onclick="permitir()">Permitir Teclas</button>
+      <br>
+     
+    </header>
+  <main>
+    <fieldset>
+      <legend>Sonidos</legend>
+      <div>
+        <label for="tipo">Estilo</label>
+        <select name="tipo" id="tipo" size="1px">
+          <option value="square">square</option>
+          <option value="sine" selected="selected">sine</option>
+          <option value="sawtooth">sawtooth</option>
+          <option value="triangle">triangle</option>
+        </select>
+      </div>
+      <div>
+        <label for="escala">Escala</label>
+        <input type="range" name="escala" id="escala" min="-3" max="3" value="0" >
+      </div>
+      
+    </fieldset>
+    <fieldset id="generacion">
+      <legend>Generacion</legend>
+      <div> 
+        <label for="octavas">12</label>
+        <input type="radio" checked name="eleccion" id="octavas" value="11">
+        <label for="cuartos">24</label>
+        <input type="radio" name="eleccion" id="cuartos" value="23">
+      </div>
+      <!-- <div>
+        <label for="Do">Do</label>
+        <input type="checkbox" id="Do" value="0" name="check" checked>
+        <label for="Do#">Do#</label>
+        <input type="checkbox" id="Do#" value="1" name="check" checked>
+        <label for="Re">Re</label>
+        <input type="checkbox" id="Re" value="2" name="check" checked>
+        <label for="Re#">Re#</label>
+        <input type="checkbox" id="Re#" value="3" checked>        
+        <label for="Mi">Mi</label>
+        <input type="checkbox" id="Mi" value="4" checked>          
+        <label for="Fa">Fa</label>
+        <input type="checkbox" id="Fa" value="5" checked>      
+        <label for="Fa#">Fa#</label>
+        <input type="checkbox" id="Fa#" value="6" checked>      
+        <label for="Sol">Sol</label>
+        <input type="checkbox" id="Sol" value="7"" checked>         
+        <label for="Sol#">Sol#</label>
+        <input type="checkbox" id="Sol#" value="8" checked>      
+        <label for="La">La</label>
+        <input type="checkbox" id="La" value="9" checked>          
+        <label for="La#">La#</label>
+        <input type="checkbox" id="La#" value="10" checked>         
+        <label for="Si">Si</label>
+        <input type="checkbox" id="Si" value="11" checked>
+        <div id="cuarto">
+        <label for="Do°" class="elegir cuarto label">Do°</label>
+        <input type="checkbox" id="Do°" value="12" class="elegir cuarto input" checked >   
+        <label for="Do#°" class="elegir cuarto label">Do#°</label>
+        <input type="checkbox" id="Do#°" value="13" class="elegir cuarto input"  checked>
+        <label for="Re°"class="elegir cuarto label">Re°</label>
+        <input type="checkbox" id="Re°" value="14" class="elegir cuarto input"  checked>
+        <label for="Re#°" class="elegir cuarto label">Re#°</label>
+        <input type="checkbox" id="Re#°" value="15" class="elegir cuarto input"  checked>
+        <label for="Mi°" class="elegir cuarto label">Mi°</label>
+        <input type="checkbox" id="Mi°" value="16"  class="elegir cuarto input" checked>
+        <label for="Fa°" class="elegir cuarto label"> Fa°</label>
+        <input type="checkbox" id="Fa°" value="17" class="elegir cuarto input"  checked>
+        <label for="Fa#°" class="elegir cuarto label">Fa#°</label>
+        <input type="checkbox" id="Fa#°" value="18" class="elegir cuarto input"  checked>
+        <label for="Sol°" class="elegir cuarto label">Sol°</label>
+        <input type="checkbox" id="Sol°" value="19" class="elegir cuarto input"  checked>
+        <label for="Sol#°" class="elegir cuarto label">Sol#°</label>
+        <input type="checkbox" id="Sol#°" value="20" class="elegir cuarto input"  checked>
+        <label for="La°" class="elegir cuarto label">La°</label>
+        <input type="checkbox" id="La°" value="21" class="elegir cuarto input"  checked>
+        <label for="La#°" class="elegir cuarto label">La#°</label>
+        <input type="checkbox" id="La#°" value="22" class="elegir cuarto input"  checked>
+        <label for="Si°" class="elegir cuarto label">Si°</label>    
+        <input type="checkbox" id="Si°" value="23" class="elegir cuarto input"  checked> 
+      </div> -->
+      </div>
+  </fieldset>
+    <button type="button" onclick="generar()" name="button" class="boton"><strong>GENERAR</strong></button>
+    <br>
+    <div id="btn_pausar">
+      <button type="button"id="pause"name="stop"class="boton, pausar" ><strong>⏸</strong></button>
+    </div>
+    <section id="Cuerpo">
+    </section>
+    <br>
+    
+    <br>
+    <button type="button" onclick ="borrarTodo()" name="borrar" class="boton"><strong>BORRAR</strong></button>
+  </main>
+    
+  
+  </body>
+</html>
